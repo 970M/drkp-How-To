@@ -1,5 +1,7 @@
 # How-To
 
+## [bash_commands.md](bash_commands.md)
+
 ## [memo_bash.md](memo_bash.md)
 
 ## [memo_nea.md](memo_nea.md)

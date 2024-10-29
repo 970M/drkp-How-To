@@ -254,3 +254,108 @@ https://doc-rd.anevia.com/files/extract/rd-bible/master/gitlab/index.html
 https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html 
 
 
+------------------------------
+
+
+## 1- Installer Git
+
+https://git-scm.com/downloads
+
+
+## 2- Configuer Git
+
+Vous pouvez afficher tous vos paramètres et leur origine en utilisant
+```
+git config --list --show-origin
+```
+
+La première chose que vous devez faire lorsque vous installez Git est de définir votre nom d'utilisateur et votre adresse e-mail. Ceci est important car chaque commit Git utilise ces informations, et elles sont immuablement intégrées aux commits que vous commencez à créer.
+```
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```
+
+Si vous souhaitez utiliser un autre éditeur de texte, tel qu'Emacs, vous pouvez procéder comme suit 
+```
+git config --global core.editor emacs
+```
+
+*NB: Sur un système Windows, si vous souhaitez utiliser un autre éditeur de texte, vous devez spécifier le chemin complet de son fichier exécutable. Cela peut être différent selon la façon dont votre éditeur est emballé. ex :git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"*
+
+Pour définir main comme nom de branche par défaut (*), procédez comme suit :
+```
+git config --global init.defaultBranch main
+```
+
+
+## 3- Initialiser un projet Git
+
+Créez votre répertoire projet
+```
+mkdir mon_projet
+```
+
+La commande git init crée un nouveau dépôt Git. Elle permet de convertir un projet existant, sans version en un dépôt Git ou d'initialiser un nouveau dépôt vide. La plupart des autres commandes Git ne sont pas disponibles hors d'un dépôt initialisé, il s'agit donc généralement de la première commande que vous exécuterez dans un nouveau projet.
+```
+git init
+```
+
+
+## 4- Etape de conception
+
+- Ajoutez des fichiers
+- Modifiez des fichers
+- Développez / Codez
+- ...
+
+La commande git add permet d’ajouter dans la zone de transit les fichiers et dossiers à synchroniser
+```
+git add .
+```
+
+Enregistrez les modifications dans le dépôt local (crée une nouvelle version du projet)
+```
+git commit -m 'initial commit of my project'
+```
+
+
+## 5- Travailler avec Gitlab
+
+[Tutoriel Gitlab](https://github.com/SocialGouv/tutoriel-gitlab)
+
+### Clé SSH
+
+Pour utiliser le CLI, le plus simple est d'utiliser une clé SSH que vous associer à votre compte GitLab. Ceci permet de ne pas avoir à utiliser les mots de pass via le CLI.
+
+- générez la clé sur votre poste
+  - windows : avec putty
+  - mac/linux : ssh-keygen -t ecdsa -b 256
+
+- ajoutez la clé publique dans votre profil GitLab
+
+### Clone/Modif de repos
+
+#### Cloner un projet 
+```
+git clone git@gitlab..aaa.bbb.ccc:/prenom.nom/faq-generale.git
+```
+#### Ajouter les fichiers pour le commit 
+```
+git add question-1.md question-2.md
+```
+#### Sauvegarder les modifications 
+```
+git commit -m 'ajout de questions'
+```
+
+#### Envoyer sur le serveur GitLab
+```
+git push
+```
+
+
+-------
+## Todo 
+```
+git remote add origin https://github.com/970M/test.git
+```
