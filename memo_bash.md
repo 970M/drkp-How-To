@@ -1,34 +1,96 @@
-#!/bin/bash
+# BASH cheat sheet
+
+[README.md](README.md)
 
 
-https://doc.ubuntu-fr.org/nettoyer_ubuntu
+## Watch the command output change over time
 
+```
+watch -n 2 "COMMAND"
+```
+```
+watch -n 2 "/etc/init.d/pgbouncer status"
+```
+
+
+## Command with loop
+
+```
+for i in `ls` ; do echo $i; done
+```
+```
+for proc in `ps -edf | grep -i create_npvrs.py | awk '{print $2}'`; do kill $proc; done
+```
+
+### Monitoring espace disque
+```
+while true; do du -s /* 2>/dev/null | sort -h > /mnt/streams0/disque_$(date +%s).txt; df -h /; sleep 1; done
+```
+
+## Vérifier l'espace disque sur clé usb
+
+```
+sudo parted /dev/sda
+(parted) print
+```
+
+## System
+
+### RAM
+
+```
+free -m -h
+vmstat -s -S M
+cat /proc/meminfo
+```
+
+### Network
+
+```
+tcpdump -i eth6 -A -s 10240 'tcp port 80' | grep -v IP | egrep --line-buffered "..(GET |\.HTTP\/|POST |HEAD )|^[A-Za-z0-9-]+: " |sed -r 's/..(GET |HTTP\/|POST |HEAD )/\n\n\1/g'
+```
+
+
+## Changer la carte graphique
+
+```
+prime-select query
+prime-select intel
+prime-select --help
+sudo prime-select intel
+prime-select query
+```
+
+## Process
+
+```
 pstree
+```
 
-Press Alt+F2, then in the resulting box type r and press the Enter key. This will temporarily resolve the issue by restarting the GUI desktop manager.
-# =============================================================================
-#[[ RECHERCHE  ]] 
-# =============================================================================
+*Press Alt+F2, then in the resulting box type r and press the Enter key. This will temporarily resolve the issue by restarting the GUI desktop manager.*
 
-### Rechercher des fichiers contenant EXPR
+
+## Rechercher des fichiers contenant EXPR
 grep -ril EXPR ./
 
-# =============================================================================
-#[[ GESTION DES UTILISATEURS ]] 
-# =============================================================================
-### Afficher la liste des utilisateurs :
 
+## Afficher la liste des utilisateurs :
+
+```
 cat /etc/passwd | awk -F: '{print $ 1}'
+```
 
-### Afficher la liste des groupes
-
+## Afficher la liste des groupes
+```
 cat /etc/group | awk -F: '{print $ 1}'
+```
 
-
-### Liste les membre d'un groupe
-
+## Liste les membre d'un groupe
+```
 getent group groupname 
 cat /etc/group
+```
+
 # =============================================================================
 # [[ GESTION DES PERMISSIONS ]] 
 # =============================================================================
