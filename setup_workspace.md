@@ -304,6 +304,9 @@ https://gitlab.ateme.net/qas/tests-neadvr/-/blob/master/cypress/README.md
 
 (sudo apt install nodejs)
 
+*Note : Supprimer les § reporter et reporterOptions dans cypress-config-js pour supprimer l'erreur xray et reportportal*
+
+
 #### Launch tests
 
 
@@ -315,24 +318,32 @@ cd ~/src/tests-neadvr/scripts
 ```
 
 
+configure host for player_live.cy.js
+```
+./scripts/configure_host.py --config gda.cfg start-stream -a -c -f
+./scripts/configure_host.py --config gda.cfg clean
+./scripts/configure_host.py --config gda.cfg player-live
+npx cypress run --spec cypress/e2e/player/player_live.cy.js --browser chrome --headed 
+./scripts/configure_host.py --config gda.cfg clean  
+./scripts/configure_host.py --config gda.cfg stop-stream
+```
+
+Run cypress
 ```
 npx cypress run
 ```
 
 To run in CLI and select a specific test:
-
 ```
 npx cypress run --spec cypress/e2e/profiles/sa_create_edit.cy.js
 ```
 
 To run in CLI and select several tests:
-
 ```
 npx cypress run --spec cypress/e2e/profiles/*.cy.js
 ```
 
 Use Google Chrome like browser is required for scrambled output. To select it, we must use this command:
-
 ```
 npx cypress run --spec cypress/e2e/player/player_live.cy.js --browser chrome --headed
 ```
