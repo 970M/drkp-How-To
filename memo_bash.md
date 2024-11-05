@@ -77,6 +77,13 @@ pstree
 grep -ril EXPR ./
 ```
 
+
+## Find
+```
+find . -name '*.jpg' -print | awk -F'/' '{print $3 $2}'
+```
+
+
 ## Permissions / Groupe
 
 ### Afficher la liste des utilisateurs :
@@ -129,7 +136,7 @@ echo -e "[\033[35m$USER\033[30m@\033[32m$HOSTNAME\033[30m:\033[31m$PWD\033[30m]$
 ```
 
 
-## EXPORT / IMPORT dconf ]] 
+## Export / Import dconf ]] 
 
 ### Backup and restore GNOME-specific settings only
 ```
@@ -142,7 +149,7 @@ dconf load /org/gnome/ < my_gnome_settings
 ```
 
 
-## NODE.JS / NPM ]] 
+## Node.js / nmp 
 ```
 npm init # Create a minimal package.json file
 
