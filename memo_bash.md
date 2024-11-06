@@ -80,9 +80,14 @@ grep -ril EXPR ./
 
 ## Find
 ```
-find . -name '*.jpg' -print | awk -F'/' '{print $3 $2}'
+find . -name '*.jpg' -print | awk -F'/' '{print $3 '#' $2}'
 ```
-
+```
+find . -type f -name "*.test.js" -o -name "*.test.ts"
+```
+```
+find . -type f -name "*.test.js" -print 2>/dev/null
+```
 
 ## Permissions / Groupe
 
