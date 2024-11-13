@@ -320,9 +320,10 @@ cd ~/src/tests-neadvr/scripts
 
 configure host for player_live.cy.js
 ```
-./scripts/configure_host.py --config gda.cfg start-stream -a -c -f
+./scripts/configure_host.py --config gda.cfg start-stream -a -f --audio
 ./scripts/configure_host.py --config gda.cfg clean
 ./scripts/configure_host.py --config gda.cfg player-live
+cd cypress/
 npx cypress run --spec cypress/e2e/player/player_live.cy.js --browser chrome --headed 
 ./scripts/configure_host.py --config gda.cfg clean  
 ./scripts/configure_host.py --config gda.cfg stop-stream
