@@ -191,6 +191,29 @@ Use Google Chrome like browser is required for scrambled output. To select it, w
 npx cypress run --spec cypress/e2e/player/player_live.cy.js --browser chrome --headed
 ```
 
+## How to push a docker image on nexus-rennes?
+
+Login to nexus-rennes
+```
+docker login -u <user> nexus-rennes.ateme.net:10444
+```
+
+Pull the external docker image in local docker pull <external_docker>
+```
+docker pull cypress/browsers:node-20.10.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
+```
+
+Tag the docker image docker tag <external_docker> <nexus_repositiry>:<tag>
+```
+docker tag cypress/browsers:node-20.10.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1 nexus-rennes.ateme.net:10444/cypress/browsers:node20.10.0-chrome118
+```
+
+Push the docker on nexus repository
+```
+docker push nexus-rennes.ateme.net:10444/cypress/browsers:node20.10.0-chrome118
+```
+
+
 ## VSCODE
 
 Problème ouverture gedit dans vscode :
