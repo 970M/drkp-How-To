@@ -163,13 +163,21 @@ git pull
 NB: Met à jour la branche sur laquelle on est... 
 
 ### fetch // Récupérer une branche distante en local
+```
+git fetch origin <branch-name>
+```
 
-git fetch origin <branch-namek>
-checkout // Rétablir un fichier à un commit précédent
+### checkout // Rétablir un fichier à un commit précédent
+
+```
 git checkout #TAG <filename>
-Supprimer en local le nom de branche remote qui n’existent plus 
+```
+
+### Supprimer en local le nom de branche remote qui n’existent plus 
+```
 git remote prune origin
 git fetch <remote>
+```
 
 La commande git remote update remote est la même que la commande git fetch remote (Il y avait quelques bugs dans certaines versions de Git qui les rendaient différentes, mais elles sont censées faire la même chose.) Avec --prune, le processus de mise à jour supprime simplement tous les noms de suivi à distance qui existent dans votre référentiel, mais ne correspondent plus à un nom de branche dans le référentiel à remote.
 
