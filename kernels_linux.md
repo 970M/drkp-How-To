@@ -95,6 +95,8 @@ uname -r
 
 ## Nettoyer /boot
 
+[How to Free Up /boot Partition Space in Ubuntu](https://operavps.com/docs/free-up-boot-partition-in-ubuntu/)
+
 ### Taille du répertoire /boot
 
 ```
