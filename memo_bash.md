@@ -3,6 +3,16 @@
 [README.md](README.md)
 
 
+## curl & wget
+
+```
+curl -l http://172.27.119.93/live/disk1/ch-low-latency-000/sa-hls-ll/ch-low-latency-000.m3u8 
+```
+```
+wget -O master-playlist.m3u8 http://172.27.119.93/live/disk1/ch-low-latency-000/sa-hls-ll/ch-low-latency-000.m3u8
+```
+
+
 ## Watch the command output change over time
 
 ```
