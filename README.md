@@ -16,4 +16,6 @@
 
 ## [markdown.md](markdown.md)
 
+## [testeur_foundation.md](testeur_foundation.md)
 
+## [testeur_manager.md](testeur_manager.md)
