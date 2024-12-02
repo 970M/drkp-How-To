@@ -97,18 +97,18 @@ bas que ceux exécutés?
 
 ## Documentation des Tests
 
-- **Politique de test** : décrit les objectifs et les finalités du test pour l’organisation
+- **Politique de test** : Décrit les objectifs et les finalités du test pour l’organisation
   - Résume la valeur que l’organisation dégage du test
   - Définit les objectifs du test, tels qu’acquérir de la confiance dans le logiciel, détecter des défauts dans le logiciel, et réduire le niveau de risque qualité
   - Décrit comment évaluer l’efficacité et la rentabilité des tests pour atteindre ces objectifs
   - Décrit le processus de test typique, éventuellement en utilisant comme base les processus de test fondamentaux de l’ISTQB
   - Spécifie comment l’organisation améliorera ses processus de test 
   
-- **Stratégie de test** : décrit les méthodes de test générales et indépendantes des projets au sein de l’organisation
+- **Stratégie de test** : Décrit les méthodes de test générales et indépendantes des projets au sein de l’organisation
   - **Analytique**: Analyse des exigences, Analyse des risques
-  - **Basée sur des modèles**: Tests conçus à partir d’un modèle
+  - **Basée sur des modèles**: Tests conçus à partir d’un modèle (type d'utilisation ...)
   - **Méthodique**: Utilisation d’un ensemble prédéfini de tests ou conditions de test (ex: taxonomie de défauts)
-  - **Conforme à un processus ou une norme**: Basée sur des règles et normes externe (ex: DO 178B)
+  - **Conforme à un processus ou une norme**: Basée sur des règles et normes externe (ex: DO 178B, processus Agile ...)
   - **Dirigée (ou consultative)**: Dictée par les parties prenantes
   - **Anti-régressions**: Eviter les régressions (avec des tests automatisés)
   - **Réactive**: Adaptée pendant l’exécution des tests
@@ -132,8 +132,7 @@ La stratégie de test peut aussi décrire les points suivants:
 ```
 
 
-- **Plan de test maître (ou plan de test projet)** : décrit l’implémentation de la stratégie de test sur un projet particulier
-
+- **Plan de test maître (ou plan de test projet)** : Décrit l’implémentation de la stratégie de test sur un projet particulier
   - Les éléments à tester et à ne pas tester
   - Les attributs qualité à tester et à ne pas tester
   - Le calendrier des tests et le budget (qui devrait être aligné sur le budget du projet ou opérationnel)
@@ -146,10 +145,9 @@ La stratégie de test peut aussi décrire les points suivants:
   - Les responsabilités pour l’exécution de chacun des niveaux de test
   - Les entrées et sorties de chaque niveau de test
   
-- **Plan de test de niveau (ou plan de test de phase)** : décrit les activités précises à mettre en œuvre pour chaque niveau de test
+- **Plan de test de niveau (ou plan de test de phase)** : Décrit les activités précises à mettre en œuvre pour chaque niveau de test
 
 - **Gestion des Risques Projet** :
-
   - Disponibilité des environnements et des outils de test
   - Disponibilité et compétence de l’équipe de test
   - Manque de standards, de règles et de techniques pour l’effort de test
@@ -168,8 +166,7 @@ Une fois un risque identifié et analysé, il existe quatre options principales 
   - Les logs de test
 
 
-## Techniques d'éstimation des Tests
-
+## Techniques d'estimation des Tests
 
 - Intuition, supposition et expérience passée
 - Structure de la répartition du travail (WBS Work-breakdown-structure)
@@ -239,7 +236,6 @@ Si les développeurs ont adopté de bonnes pratiques comme le test unitaire auto
   - Couverture des environnements et des configurations
   - Couverture du code
 
-
 **Les métriques pour mesurer la planification et le suivi des tests peuvent inclure** :
 - La couverture des risques, des exigences et des autres éléments de la base de test
 - La découverte de défauts
@@ -264,7 +260,6 @@ Si les développeurs ont adopté de bonnes pratiques comme le test unitaire auto
 - Nombre prévu versus réel de défauts trouvés/résolus
 - Couverture prévue versus réalisée.
 
-
 **Les métriques contrôlant l’avancement du test peuvent inclure les éléments suivants** :
 - Nombre de conditions de test, cas de tests ou spécifications de test prévus et ceux ayant été exécutés, répartis par statut (passés ou en échec)
 - Nombre total de défauts, souvent classés par sévérité, priorité, état actuel, sous-système concerné, ou autre classification (voir Chapitre 4)
@@ -287,3 +282,131 @@ Si les développeurs ont adopté de bonnes pratiques comme le test unitaire auto
 
 ## Revues 
 
+Les revues possibles sur un projet incluent:
+-  Les revues contractuelles, initialisées au démarrage du projet et aux jalons majeurs
+-  Les revues d’exigences, initialisés lorsque les exigences sont disponibles pour être revues, ce qui idéalement couvre les exigences fonctionnelles et non fonctionnelles
+-  Les revues de conception de haut niveau, initiées quand la conception d’architecture est disponible pour revue
+-  Les revues de conception détaillée, initiées lorsque la conception détaillée est disponible
+-  Les revues de code, effectuées lorsque les modules individuels sont créés, et pouvant inclure les tests unitaires et leurs résultats de même que le code lui-même
+-  Les revues de livrables de test, qui peuvent inclure le ou les plan(s) de test, les conditions de test, les résultats de l’analyse des risques qualité (produit), les tests, les données de test, les environnements de test, et les résultats de test
+-  Les revues de démarrage des tests (disponibilité des tests) et les revues de sortie des tests pour chaque niveau de test, qui vérifient respectivement les critères d’entrée des tests avant de commencer leur exécution et les critères de sortie avant d’arrêter le test 
+-  Les revues d’acceptation, utilisées pour obtenir l’acceptation d’un système par un client ou une partie prenante
+  
+
+### Gérer les Revues
+
+**Pré-requis** :
+
+- Ce qui doit être revu (produit et processus)
+- Qui devrait être impliqué dans chaque revue spécifique
+- Quels facteurs de risque importants couvrir ?
+
+**Déterminer le temps optimal pour exécuter une revue, dépend de** :
+- La disponibilité des éléments à revoir dans un état suffisamment avancé
+- La disponibilité des bonnes personnes pour la revue
+- Le moment où la version finale de l’élément devrait être disponible
+- Le temps nécessaire pour le processus de revue de cet élément particulier
+
+**Lors du déroulement de revues formelles, le responsable de la revue doit s’assurer que** :
+- Des mesures appropriées sont fournies par les participants aux revues pour permettre d’évaluer l’efficacité d’une revue
+- Des check-lists sont créées et maintenues pour améliorer les revues futures
+- L’évaluation de la sévérité et de la priorité des défauts est définie pour utilisation par la gestion des anomalies trouvées durant les revues
+
+**Après chaque revue, le responsable de revues devrait** :
+- Collecter les métriques de revue et s’assurer que les problèmes identifiés sont traités pour atteindre les objectifs de la revue
+- Utiliser des métriques de revues comme entrées pour déterminer le retour sur investissement (ROI) des revues
+- Fournir des informations en retour aux parties prenantes pertinentes
+- Fournir des informations en retour aux participants aux revues
+
+### Métriques pour les Revues
+
+**Objectif des métriques** :
+- Évaluer la qualité de l’élément revu
+- Evaluer le coût de réalisation de la revue
+- Evaluer le bénéfice engendré par la conduite de revue
+
+**Métriques pour l'évaluation du produit** :
+- Taille des livrables (pages, lignes de codes, etc.)
+- Temps de préparation nécessaire (avant la revue)
+- Temps nécessaire pour mener la revue
+- Temps nécessaire pour corriger les défauts
+- Durée du processus de revue
+- Nombre et sévérité des défauts trouvés
+- Identification des agrégats de défauts (c.à.d., parties ayant une plus forte densité de défauts)
+- Type de revue (revue informelle, relecture technique, revue technique ou inspection)
+- Densité de défauts moyenne (par ex., défauts par page ou par millier de lignes de code)
+- Estimation du nombre de défauts résiduels (densité de défauts résiduelle)
+
+**Métriques pour l'évaluation du processus** :
+- Efficacité de détection des défauts (prenant en compte les défauts trouvés ultérieurement dans le cycle de vie)
+- Amélioration de la charge et du temps alloués au processus de revue
+- Pourcentage de couverture des livrables prévus
+- Types et sévérité des défauts détectés
+- Enquêtes réalisées auprès des participants sur la rentabilité et l’efficacité du processus de revue
+- Métrique sur le coût de la qualité pour les défauts identifiés lors de revues, versus coût des défauts trouvés lors des tests dynamiques et des défauts trouvés en production
+- Corrélation sur l’efficacité des revues (type de revues versus efficacité de la détection de défauts)
+- Nombre de relecteurs
+- Nombre de défauts trouvés par heure consacrée à la revue
+- Estimation du temps économisé pour le projet
+- Effort moyen par défaut (c.à.d., temps total consacré à la détection et à la résolution des défauts divisé par le nombre de défauts
+
+### Gérer des Revues Formelles
+
+**Les principales caractéristiques des revues formelles sont** :
+- Critères d’entrée et de sortie définis
+- Check-lists utilisées par les relecteurs
+- Livrables tels que des rapports, des notes d’évaluation et tout autre document résumant les résultats de la revue
+- Métriques pour un reporting sur la rentabilité, l’efficacité et la progression des revues
+
+## Gestion des Anomalies
+
+### Cycle d’une Anomalie et États
+- L’état **initial**
+  - Dans cet état, un ou plusieurs testeurs collectent l’information qui sera nécessaire à la personne responsable de la résolution du défaut pour reproduire l’anomalie (voir section 4.3 pour l’information à inclure dans le rapport d’anomalie).
+  - Cet état peut aussi être appelé “ouvert” ou “nouveau”.
+- L’état **retourné**
+  - Dans cet état, le destinataire du rapport a rejeté ce rapport ou a demandé au testeur de fournir davantage d’informations. Cet état peut indiquer un manque dans le processus initial de recueil d’informations ou dans le test lui-même, et les Test Managers devraient mesurer les taux de retour excessifs. Le(s) testeur(s) doi(ven)t fournir l’information complémentaire, ou confirmer que le rapport devrait en effet être rejeté.
+  - Cet état peut aussi être appelé “rejeté” ou “clarification”.
+- L’état **test de confirmation**
+  - Dans cet état, le testeur va exécuter un test de confirmation (généralement, en suivant les étapes indiquées dans le rapport d’anomalie pour reproduire la défaillance) pour déterminer si la correction a bien résolu le problème. Si le test de confirmation indique que le défaut est réparé, le testeur devrait clôturer le rapport. Si le test de confirmation indique que le défaut n’est pas réparé, le testeur devrait ré-ouvrir le rapport, déclenchant sa réaffectation au porteur précédent, qui pourra alors compléter le travail nécessaire pour réparer le défaut.
+  - Cet état peut aussi être appelé “résolu” ou “vérification”.
+
+### Données d’un Rapport d’Anomalie
+- La gestion de l’anomalie selon le cycle de vie des anomalies
+- Une évaluation du statut du projet, spécifiquement en termes de qualité produit et avancement du test
+- L’évaluation de la capacité du processus
+
+### Données collectées sur les anomalies
+- Le nom de la personne ayant découvert le défaut
+- Le rôle de la personne (par ex., utilisateur final, analyste métier, développeur, personne du support technique)
+- Le type de test réalisé (par ex., utilisabilité, performance, non-régression)
+- Un résumé du problème
+- Une description détaillée du problème
+- Les étapes nécessaires pour reproduire la défaillance (pour un défaut), ainsi que les résultats attendus et obtenus (mettant en évidence l’anomalie), intégrant des copies d’écran, des extraits de bases de données et de logs là où c’est possible
+- Les phases du cycle de vie durant lesquelles le défaut a été introduit, détecté et supprimé, y compris le niveau de test si c’est applicable
+- Le livrable dans lequel le défaut a été introduit
+- La sévérité de l’impact sur le système et/ou les parties prenantes produit (en général déterminé par le comportement technique du système)
+- La priorité de correction du problème (généralement déterminé par l’impact métier de la défaillance)
+- Le sous-système ou composant auquel le défaut est attaché (pour l’analyse des agrégats de défauts)
+- L’activité en cours sur le projet lorsque le problème a été détecté
+- La méthode d’identification qui a révélé le problème (par ex., revue, analyse statique, test dynamique, utilisation en production)
+- Le type de défaut (correspondant en général à la taxonomie utilisée)
+- La caractéristique qualité affectée par le défaut
+- L’environnement de test dans lequel le défaut a été observé (pour le test dynamique)
+- Le projet et produit dans lesquels le problème se trouve
+- Le propriétaire actuel; c.à.d., la personne actuellement affectée au problème, à condition que le rapport ne soit pas dans un état final
+- L’état courant du rapport (en général géré par l’outil de suivi des anomalies dans le cycle de vie de l’anomalie)
+- Les livrables spécifiques (par ex., éléments de test avec leur numéro de version) dans lesquels le problème a été observé, ainsi que le livrable spécifique où le problème a été définitivement résolu
+- L’impact sur les intérêts des parties prenantes du projet et du produit
+- Les conclusions, recommandations et approbations des actions prises ou non pour résoudre le problème
+- Les risques, coûts, opportunités, et bénéfices associés à la correction ou non du défaut
+- Les dates de transitions d’état du défaut dans son cycle de vie, le propriétaire du défaut au moment de chaque transition, et les actions prises par l’équipe projet pour isoler, réparer et vérifier la correction
+- Une description de la façon de résoudre le défaut et des recommandations pour le test de la correction (si le défaut a été résolu par un changement dans le logiciel)
+- D’autres références, comme le test qui a mis en évidence le défaut et le risque, l’exigence, ou tout autre élément relié au défaut (pour le test dynamique)
+
+### Évaluer l’Efficacité d’un Processus avec l’Information des Rapports d’Anomalie
+- Utiliser l’information sur la phase d’introduction, de détection, et de suppression, pour évaluer, phase par phase le confinement par phase et suggérer des manières d’améliorer l’efficacité de détection des défauts dans chaque phase
+- Utiliser l’information sur la phase d’introduction pour une analyse, selon la loi de Pareto, des phases dans lesquelles le plus grand nombre de défauts sont introduits, afin d’identifier des améliorations ciblées visant à réduire le nombre total de défauts
+- Utiliser les informations de cause racine des défauts de l’analyse des causes racines des défauts pour déterminer les raisons sous-jacentes à l’introduction d’un défaut afin d’améliorer le processus pour réduire le nombre total de défauts
+- Utiliser l’information sur les phases d’introduction, de détection, et de suppression, pour réaliser une analyse du coût de la qualité afin de minimiser le coût associé aux défauts
+- Utiliser l’information sur les composants défaillants pour effectuer une analyse des agrégats de défauts afin de mieux comprendre les risques techniques (pour du test basé sur les risques) et permettre une ré-ingénierie des composants problématiques
