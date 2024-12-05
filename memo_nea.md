@@ -24,6 +24,41 @@ umount toto
 parted /dev/drdb0 print
 ```
 
+## NEA
+
+### Nettoyer les channels radicalement
+```
+cd /var/www/live/disk1
+rm -rf *
+```
+
+### Prometheus/Grafana
+```
+ssh gdaguetdvr-grafana.ateme.net
+su - ateme
+cd /etc/prometheus
+yamllint .
+sudo service Prometheus reload
+sudo -l
+sudo service Prometheus restart
+```
+
+### Utiliser un Webplayer externe (proxy anevia)
+
+Remplacer http:// par https://https-proxy.anevia.com/
+
+http://172.27.114.45:80/live/disk1/ch_000/sa_dash/ch_000.mpd
+
+==>
+
+https://https-proxy.anevia.com/172.27.114.45:80/live/disk1/ch_000/sa_dash/ch_000.mpd
+
+## Apache Server Status
+
+[https://doc-rd.anevia.com/files/extract/NEA-DVR/master/configuration-keys.html#server-status]
+
+[http://SERVER_IP/admin/server-status]
+[https://nea-dvr-perf.lab1.anevia.com:8443/admin/server-status]
 
 ## Logging
 
@@ -135,7 +170,7 @@ project = "NEA-DVR-SW" AND issueType = "Test Case" AND summary ~  "test_*1plus1"
 ```
 
 
-## test-neadvr
+## Tests : test-neadvr
 
 ```
 pytest --config configs/gda-3.cfg tests/live/test_retry_report_portal.py --reportportal -o rp_api_key="gda-rp-token_rIFcluKnQe29aMZZoGlmok5kFlzoXqxl0glXxYKn7e_zkVC-u-C5EJ51ypSiUiYF" -o rp_launch="py:fw-st-live-dev" -o rp_endpoint="http://report-portal.ateme.net:8080" -o rp_launch_attributes=":DVR-14623 PLAN_ID:DVR-14041 VERSION:4.23.0 PIPELINE_TYPE:test-retry PRODUCT_TYPE:firmware"

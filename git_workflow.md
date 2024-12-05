@@ -208,6 +208,11 @@ Ensuite, nous exécutons le pick-chérie avec la commande suivante:
 git cherry-pick #TAG
 ```
 
+### Rechercher dans les logs de git
+```
+git log -p viamotion-plus-base/src/phanes-ott/OttLive* | less -R +/'(splice|infinite)'
+```
+
 
 ## Message de commits
 
