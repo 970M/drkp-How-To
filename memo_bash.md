@@ -60,6 +60,20 @@ cat /proc/meminfo
 tcpdump -i eth6 -A -s 10240 'tcp port 80' | grep -v IP | egrep --line-buffered "..(GET |\.HTTP\/|POST |HEAD )|^[A-Za-z0-9-]+: " |sed -r 's/..(GET |HTTP\/|POST |HEAD )/\n\n\1/g'
 ```
 
+## Copier un ISO sur clé
+
+- Insérez votre clé USB dans votre ordinateur Ubuntu.
+- Ouvrez votre terminal en le recherchant dans le menu d'application, ou en appuyant sur : Ctrl + Alt + T.
+- Exécutez la commande lsblk dans votre terminal pour identifier votre clé USB. Veillez à choisir le bon appareil.
+
+Démonter toutes les partitions de la clé USB :
+```
+sudo umount /dev/sda
+```
+Enregistrez l'ISO sur le lecteur USB
+```
+sudo dd bs=4M if=<iso file location> of=/dev/sda status=progess oflag=sync
+```
 
 ## Changer la carte graphique
 
@@ -86,7 +100,6 @@ pstree
 ```
 grep -ril EXPR ./
 ```
-
 
 ## Find
 ```
