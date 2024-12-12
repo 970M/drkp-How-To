@@ -226,7 +226,7 @@ Use Google Chrome like browser is required for scrambled output. To select it, w
 npx cypress run --spec cypress/e2e/player/player_live.cy.js --browser chrome --headed
 ```
 
-## How to push a docker image on nexus-rennes?
+## How to push/pull a docker image on nexus-rennes?
 
 Login to nexus-rennes
 ```
@@ -247,6 +247,18 @@ Push the docker on nexus repository
 ```
 docker push nexus-rennes.ateme.net:10444/cypress/browsers:node20.10.0-chrome118
 ```
+
+
+### Execute ateme-black (version nexus)
+```
+docker pull nexus-rennes.ateme.net:10444/open/python-conform
+docker image ls
+docker run -it 837d5fd94483
+docker run -v /home/gdaguet/src/tests-neadvr/benchmark/scripts:/home 837d5fd94483 /usr/local/bin/ateme-black --check /home
+docker run -v /home/gdaguet/src/tests-neadvr/benchmark/scripts:/home 837d5fd94483 /usr/local/bin/ateme-black /home
+```
+
+
 
 
 ## VSCODE

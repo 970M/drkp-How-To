@@ -12,6 +12,8 @@
 
 ## [git_workflow.md](git_workflow.md)
 
+## [docker-basics.md](docker-basics.md)
+
 ## [kernels_linux.md](kernels_linux.md)
 
 ## [markdown.md](markdown.md)

@@ -70,9 +70,15 @@ Démonter toutes les partitions de la clé USB :
 ```
 sudo umount /dev/sda
 ```
-Enregistrez l'ISO sur le lecteur USB
+Enregistrez l'ISO sur le lecteur USB (/dev/sda)
 ```
 sudo dd bs=4M if=<iso file location> of=/dev/sda status=progess oflag=sync
+```
+
+## Supprimer les donées d'un disque (/dev/sdb)
+
+```
+sudo dd if=/dev/zero of=/dev/sdb bs=4M status=progess
 ```
 
 ## Changer la carte graphique
