@@ -26,6 +26,12 @@ parted /dev/drdb0 print
 
 ## NEA
 
+### Redémarrache d'apache si trop chargé
+```
+regset apache_monitoring/threshold_restart 200
+```
+
+
 ### Nettoyer les channels radicalement
 ```
 cd /var/www/live/disk1
