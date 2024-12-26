@@ -199,11 +199,11 @@ git push [origin] --delete [nom-de-ma-branche]
 
 ### cherry pick // Mettre un commit d’une branche sur une autre
 
-Dans cet exemple, nous avons construit, disons que nous voulions utiliser commit #TAG en[nom-de-ma-branche]. Nous veillons tout d'abord à ce que nous travaillions sur la[nom-de-ma-branche]branche.
+Dans cet exemple, nous voulons utiliser le commit #TAG dans **[nom-de-ma-branche]**. Nous veillons tout d'abord à ce que nous travaillions sur la branche **[nom-de-ma-branche]**.
+```
 git checkout [nom-de-ma-branche]
-
+```
 Ensuite, nous exécutons le pick-chérie avec la commande suivante:
-
 ```
 git cherry-pick #TAG
 ```
