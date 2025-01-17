@@ -125,6 +125,12 @@ watch -n2 "
 ```
 
 
+## Accèder à corp.ateme.com ou arti
+
+```
+sudo mount -t cifs -v -o ro,username=gdaguet,password=<active_dir_pwd> //warehouse-vz.ateme.net/warehouse/ ./warehouse
+```
+
 ## Variable registry 
 
 ### Commande de base
@@ -159,6 +165,12 @@ mediainfo */stream.ts | grep Duration
 
 
 ## Streamers
+
+
+```
+ssh root@qas-neadvr-streamer-2.lab1.anevia.com
+```
+
 
 ```
 cd ts-streamer-lg-1; ./docker-compose.sh up -d ; cd ../ts-streamer-lg-2; ./docker-compose.sh up -d ; cd ../ts-streamer-lg-3; ./docker-compose.sh up -d ; cd ../ts-streamer-lg-4; ./docker-compose.sh up -d ; cd ../ts-streamer-lg-5; ./docker-compose.sh up -d
