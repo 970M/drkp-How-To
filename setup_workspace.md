@@ -106,30 +106,28 @@ alias newcert='K=~/.ssh/id_ed25519; curl -f -F "pubkey=@$K.pub" <https://ssh-ca.
 https://docs.python.org/fr/3/library/venv.html
 
 ```
-sudo apt install python3.9
+sudo apt install python3.10
 cd $HOME
-mkdir venv-dvr
-cd venv-dvr
-sudo apt install python3.9-venv
-/usr/bin/python3.9 -m venv .
+mkdir venv-3.10
+cd venv-3.10
+sudo apt install python3.10-venv
+/usr/bin/python3.10 -m venv .
 cd bin
-./pip3.9 install --upgrade pip
-./pip3.9 install pytest
+./pip3.10 install --upgrade pip
+./pip3.10 install pytest
 source activate
 ```
 
 
 ```
-gdaguet@LPC643FR:[12:44:13]:~/src/venv-dvr/bin$ ltr
+gdaguet@LPC643FR:[12:44:13]:~/src/venv-3.10/bin$ ltr
 total 156K
-lrwxrwxrwx 1 gdaguet gdaguet   16 sept. 10 22:31 python3 -> /usr/bin/python3
-lrwxrwxrwx 1 gdaguet gdaguet    7 sept. 10 22:31 python -> python3
-lrwxrwxrwx 1 gdaguet gdaguet   18 sept. 10 22:43 python3.9 -> /usr/bin/python3.9
--rwxrwxr-x 1 gdaguet gdaguet  254 sept. 10 22:43 easy_install-3.9
--rwxrwxr-x 1 gdaguet gdaguet  254 sept. 10 22:43 easy_install
--rwxrwxr-x 1 gdaguet gdaguet  245 sept. 10 22:43 pip
--rwxrwxr-x 1 gdaguet gdaguet  245 sept. 10 22:43 pip3.9
--rwxrwxr-x 1 gdaguet gdaguet  245 sept. 10 22:43 pip3
+lrwxrwxrwx 1 gdaguet gdaguet   16 sept. 10 22:31 python3 -> python3.10*
+lrwxrwxrwx 1 gdaguet gdaguet    7 sept. 10 22:31 python -> python3.10*
+lrwxrwxrwx 1 gdaguet gdaguet   18 sept. 10 22:43 python3.10 -> /usr/bin/python3.10
+-rwxrwxr-x 1 gdaguet gdaguet  245 sept. 10 22:43 pip*
+-rwxrwxr-x 1 gdaguet gdaguet  245 sept. 10 22:43 pip3.10*
+-rwxrwxr-x 1 gdaguet gdaguet  245 sept. 10 22:43 pip3*
 -rwxrwxr-x 1 gdaguet gdaguet  245 sept. 10 22:48 pytest
 ...
 ```
@@ -140,7 +138,7 @@ lrwxrwxrwx 1 gdaguet gdaguet   18 sept. 10 22:43 python3.9 -> /usr/bin/python3.9
 git clone --recurse-submodule git@gitlab.ateme.net:qas/tests-neadvr.git 
 
 cd ~/src/tests-neadvr/pytest
-~/src/venv-dvr/bin/pip3.9 install -r requirements.txt
+~/src/venv-3.10/bin/pip3.10 install -r requirements.txt
 
 ```
 
