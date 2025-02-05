@@ -281,6 +281,26 @@ pytest --config configs/gda-3.cfg --test-environments firmware --feature_marker 
 
 ```
 
+#### Launch test with xray push
+
+```
+-m "DVR-10729"
+--config ./configs/gitlab-ci_qas-neadvr-2-3.cfg
+--update-version https://firmware.anevia.com/roms-release/nea-dvr-sw-4.25.1-rc1.afi
+--priority-marker ""
+--feature-marker ""
+--exclude-marker ""
+--html=report.html
+--self-contained-html
+--junitxml=junit-report.xml
+--test-environments firmware
+--xray-client-id=32C8D27ADCCC451B94F8560730E41DCC
+--xray-client-secret=1030655624eea2ca2ccfc8c493209d3824592f67a4cf87f6bbfe3d240b4834a4
+--export-run-results=True
+--test-execution-key=DVR-15964
+--test-plan-key=DVR-15096
+```
+
 ### Cypress
 
 
