@@ -284,22 +284,23 @@ pytest --config configs/gda-3.cfg --test-environments firmware --feature_marker 
 #### Launch test with xray push
 
 ```
--m "DVR-10729"
---config ./configs/gitlab-ci_qas-neadvr-2-3.cfg
---update-version https://firmware.anevia.com/roms-release/nea-dvr-sw-4.25.1-rc1.afi
+pytest tests 
+-m DVR-xxxx
+--config ./configs/gda.cfg
+--update-version https://firmware.anevia.com/roms-testing/nea-dvr-sw/master/nea-dvr-sw-4.26.0-git1736756962.8cba5d0.20250206T200121Z.afi
 --priority-marker ""
 --feature-marker ""
 --exclude-marker ""
---html=report.html
---self-contained-html
---junitxml=junit-report.xml
+--html=report.html 
+--self-contained-html 
+--junitxml=junit-report.xml 
 --test-environments firmware
---xray-client-id=32C8D27ADCCC451B94F8560730E41DCC
---xray-client-secret=1030655624eea2ca2ccfc8c493209d3824592f67a4cf87f6bbfe3d240b4834a4
---export-run-results=True
---test-execution-key=DVR-15964
---test-plan-key=DVR-15096
+--xray-client-id=F4155B01C5674A0CAC25C927B2B55E62
+--xray-client-secret=8795954c0961b56dede1afbe13acef0a3fd6efcc5aff61dc632048d4d5c29ced
+--export-run-results=True --test-execution-key=DVR-16123 --test-plan-key=DVR-15915
 ```
+
+
 
 ### Cypress
 

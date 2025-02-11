@@ -2,11 +2,11 @@
 
 ## [setup_workspace.md](setup_workspace.md)
 
-## [memo_nea.md](memo_nea.md)
+## [nea_memo.md](nea_memo.md)
 
 ---------
 
-## [memo_bash.md](memo_bash.md)
+## [bash_memo.md](bash_memo.md)
 
 ## [bash_commands.md](bash_commands.md)
 

@@ -9,7 +9,6 @@
 ENABLED=yes /usr/share/commands/upgrade @AFI
 ```
 
-
 ## EDS debbuging
 
 ### Test de la partition drdb :
@@ -65,6 +64,37 @@ https://https-proxy.anevia.com/172.27.114.45:80/live/disk1/ch_000/sa_dash/ch_000
 
 [http://SERVER_IP/admin/server-status]
 [https://nea-dvr-perf.lab1.anevia.com:8443/admin/server-status]
+
+## Verifier bug haproxy DVR-15911
+
+```
+cat /etc/haproxy/haproxy.cfg 
+```
+
+Expected :
+
+```
+server qas-neadvr-2 172.27.117.206:5432 check addr 172.27.117.206 port 8080
+server qas-neadvr-3 172.27.117.207:5432 check addr 172.27.117.207 port 8080
+```
+
+Received :
+
+```
+server qas-neadvr-2 172.27.117.206:5432 check addr 172.27.117.206 port 8080
+server 
+```
+
+
+## Redémarrer les services OTT
+
+```
+/etc/init.d/ott restart
+```
+
+
+
+
 
 ## Logging
 
